@@ -4,3 +4,13 @@
 body {
   font-family: "Josefin Sans", cursive;
 }
+
+ul li {
+  list-style-type: none;
+}
+
+ul li a,
+a {
+  text-decoration: none;
+  color: #fff;
+}

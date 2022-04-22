@@ -1,0 +1,21 @@
+.heroBox {
+  margin-top: -6rem;
+}
+
+.card-div {
+  background-color: rgb(26, 26, 26);
+  height: 180px;
+  padding: 2px;
+  color: #fff;
+}
+
+.card-div:hover {
+  background-color: #ffb606;
+  cursor: pointer;
+  color: #000;
+}
+
+.header-icon {
+  font-size: 2.5rem;
+  margin: 0.9rem;
+}

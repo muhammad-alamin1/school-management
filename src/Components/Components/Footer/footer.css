@@ -1,0 +1,43 @@
+#footer {
+  background-color: rgb(26, 26, 26);
+  color: #fff;
+  height: 40rem;
+  padding: 6rem;
+}
+#subscribeBtn {
+  font-size: 1.2rem;
+}
+
+#subscribeBtn:hover {
+  background-color: #ffb606;
+}
+
+#contact {
+  margin-top: 4rem;
+}
+
+.contactIcon {
+  margin-right: 0.4rem;
+}
+
+.social-links ul {
+  display: flex;
+}
+.social-links ul li {
+  list-style-type: none;
+}
+
+.social-links ul li a {
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.contactIcon:hover {
+  background-color: rgb(26, 26, 26);
+  color: #ffb606;
+}
+
+#footer a:hover {
+  color: #ffb606;
+}
