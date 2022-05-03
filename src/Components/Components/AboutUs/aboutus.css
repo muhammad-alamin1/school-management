@@ -1,0 +1,28 @@
+#about-us {
+  background-color: #f0f2f4;
+  padding: 10rem;
+  margin-top: -5.1rem;
+}
+#about-us h2 {
+  font-size: 2.5rem;
+  color: #ffb606;
+  margin-bottom: 2.5rem;
+}
+
+#aboutUsLogo {
+  width: 100px;
+  height: 100px;
+}
+
+#about-us button {
+  background-color: rgb(26, 26, 26);
+  color: #fff;
+  width: 200px;
+  padding: 0.7rem;
+  margin-top: 4.5rem;
+}
+
+#about-us button:hover {
+  background-color: #ffb606;
+  color: #000;
+}

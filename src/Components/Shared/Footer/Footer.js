@@ -1,6 +1,7 @@
 import {
   faFacebook,
   faInstagramSquare,
+  faLinkedin,
   faTwitterSquare,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
@@ -24,7 +25,7 @@ export default function Footer() {
               <img src={logo} alt="logo" />
             </div>
             <div className="col-md-9">
-              <h6 style={{ marginBottom: "1.5rem" }}>BRUASS</h6>
+              <h5 style={{ marginBottom: "1.5rem" }}>BRUASS</h5>
               <a href="">Question</a>
               <br />
               <a href="">Help</a>
@@ -32,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="col-md-3">
-          <h6 style={{ marginBottom: "1.5rem" }}>COMPANY</h6>
+          <h5 style={{ marginBottom: "1.5rem" }}>Company</h5>
           <div className="page-links">
             <a href="">About</a>
             <br />
@@ -49,7 +50,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="col-md-3">
-          <h6 style={{ marginBottom: "1.5rem" }}>Useful Links</h6>
+          <h5 style={{ marginBottom: "1.5rem" }}>Useful Links</h5>
           <div className="page-links">
             <a href="">Testimonials</a>
             <br />
@@ -110,6 +111,11 @@ export default function Footer() {
                     icon={faInstagramSquare}
                     className="contactIcon"
                   />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <FontAwesomeIcon icon={faLinkedin} className="contactIcon" />
                 </a>
               </li>
               <li>

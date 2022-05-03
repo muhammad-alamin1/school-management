@@ -1,0 +1,30 @@
+#notification {
+  background-color: rgb(240, 242, 244);
+  min-height: 350px;
+}
+
+#notification h2 {
+  color: #ffb606;
+}
+
+#notification .date {
+  background-color: rgb(26, 26, 26);
+  color: #fff;
+  width: 50px;
+  height: 65px;
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+#notification button {
+  background-color: rgb(26, 26, 26);
+  margin: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+#notification button:hover {
+  background-color: #ffb606;
+  color: #000;
+}

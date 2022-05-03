@@ -1,0 +1,20 @@
+#background {
+  background: url("../../../images/break.jpg") no-repeat;
+  background-position: center center;
+  height: 75vh;
+}
+
+#background h2 {
+  position: absolute;
+  margin-left: 37rem;
+  margin-top: 10rem;
+}
+#background img {
+  width: 150px;
+  height: 150px;
+}
+
+#background img {
+  margin-left: 53rem;
+  margin-top: 13rem;
+}

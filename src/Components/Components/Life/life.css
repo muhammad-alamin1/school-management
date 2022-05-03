@@ -1,0 +1,47 @@
+.life-left-img {
+  position: relative;
+  background: url("../../../images/homeleftupdate.jpg") no-repeat;
+  height: 800px;
+  left: -105px;
+  z-index: 20;
+  border-right: 23px solid white;
+  border-top: 23px solid white;
+  border-bottom: 23px solid white;
+  box-shadow: 0px 8px 12px #000;
+  margin-top: -2.7rem;
+  margin-bottom: -2.7rem;
+}
+
+.life-right-img {
+  position: relative;
+  background-image: url("../../../images/homerightupdate-1.jpg");
+  height: 800px;
+  right: -105px;
+  z-index: 20;
+  border-left: 23px solid white;
+  border-top: 23px solid white;
+  border-bottom: 23px solid white;
+  box-shadow: 0px 8px 12px #000;
+  margin-top: -2.7rem;
+  margin-bottom: -2.7rem;
+}
+
+.life-mid h2 {
+  color: #ffb606;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.life-mid button {
+  background-color: rgb(26, 26, 26);
+  color: #fff;
+  width: 200px;
+  padding: 0.7rem;
+  margin-top: 4.5rem;
+}
+
+.life-mid button:hover {
+  background-color: #ffb606;
+  color: #000;
+}
