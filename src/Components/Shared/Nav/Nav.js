@@ -35,9 +35,14 @@ export default function Nav() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" to="">
+                <Link className="nav-link" aria-current="page" to="/blogs">
+                  Blog
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/admin/dashboard">
                   Admin
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/register">

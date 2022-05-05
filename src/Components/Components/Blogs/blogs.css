@@ -1,0 +1,40 @@
+#blogs h2 {
+  font-size: 3rem;
+  margin: 2rem 0rem;
+}
+
+#blogs img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+#blogs span {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+#blogs p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+#blogs span,
+#blogs p {
+  color: gray;
+}
+
+#blogs button {
+  width: 120px;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 3rem;
+}
+
+#blogs button a {
+  color: #000;
+}
+
+/* .pagination {
+  margin-left: 10rem;
+} */

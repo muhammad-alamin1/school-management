@@ -22,7 +22,8 @@
   margin-top: 4.5rem;
 }
 
-#about-us button:hover {
+#about-us button:hover,
+#blogs button:hover {
   background-color: #ffb606;
   color: #000;
 }
