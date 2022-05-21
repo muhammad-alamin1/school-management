@@ -15,6 +15,9 @@ import muhammad from "../../../images/logo.png";
 import "./dashboardPanel.css";
 
 export default function DashboardPanel() {
+  const user = localStorage.getItem("user");
+  const parseUserData = JSON.parse(user);
+
   return (
     <div className="page-wrapper chiller-theme bg-dark toggled">
       <nav id="sidebar" className="sidebar-wrapper">
@@ -48,36 +51,71 @@ export default function DashboardPanel() {
           {/* <!-- sidebar-search  --> */}
           <div className="sidebar-menu">
             <ul>
-              <li className="sidebar-dropdown my-2">
-                <div className="dropdown">
-                  <a
-                    className="btn "
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <Link to="">
-                      <FontAwesomeIcon
-                        icon={faTachometerAlt}
-                        className="dashboard-icon"
-                      />
-                      <span>Admissions</span>
-                    </Link>
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="dropdownMenuLink"
-                  >
-                    <a className="dropdown-item" to="">
-                      Section 1
+              {parseUserData &&
+              parseUserData.role == "admin" &&
+              parseUserData.email === "muhammadalamindev01@gmail.com" ? (
+                <li className="sidebar-dropdown my-2">
+                  <div className="dropdown">
+                    <a
+                      className="btn "
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <Link to="">
+                        <FontAwesomeIcon
+                          icon={faTachometerAlt}
+                          className="dashboard-icon"
+                        />
+                        <span>Admission</span>
+                      </Link>
                     </a>
-                    <a className="dropdown-item" to="">
-                      Section 1
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="dropdownMenuLink"
+                    >
+                      <a className="dropdown-item" to="">
+                        Section 1
+                      </a>
+                      <a className="dropdown-item" to="">
+                        Section 1
+                      </a>
+                    </ul>
+                  </div>
+                </li>
+              ) : (
+                <li className="sidebar-dropdown my-2">
+                  <div className="dropdown">
+                    <a
+                      className="btn "
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <Link to="">
+                        <FontAwesomeIcon
+                          icon={faTachometerAlt}
+                          className="dashboard-icon"
+                        />
+                        <span>Student</span>
+                      </Link>
                     </a>
-                  </ul>
-                </div>
-              </li>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="dropdownMenuLink"
+                    >
+                      <a className="dropdown-item" to="">
+                        Section 1
+                      </a>
+                      <a className="dropdown-item" to="">
+                        Section 1
+                      </a>
+                    </ul>
+                  </div>
+                </li>
+              )}
             </ul>
           </div>
           {/* <!-- sidebar-menu  --> */}
