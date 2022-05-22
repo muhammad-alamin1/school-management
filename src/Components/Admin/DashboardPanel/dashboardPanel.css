@@ -62,7 +62,8 @@ body {
 /*----------------page-wrapper----------------*/
 
 .page-wrapper {
-  height: 100vh;
+  height: auto;
+  margin-left: 20rem;
 }
 
 .page-wrapper .theme {
