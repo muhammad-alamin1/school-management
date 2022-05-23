@@ -102,8 +102,20 @@ export default function DashboardPanel() {
                             >
                               All Student Register Data
                             </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/student/admission"
+                            >
+                              Student Admission
+                            </Link>
                             <Link className="dropdown-item" to="">
-                              Section 1
+                              Admission Information
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Add Top Student
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Top Student Information
                             </Link>
                           </ul>
                         </div>
@@ -122,7 +134,7 @@ export default function DashboardPanel() {
                                 icon={faTachometerAlt}
                                 className="dashboard-icon"
                               />
-                              <span>Subscribers</span>
+                              <span>Teachers</span>
                             </Link>
                           </a>
                           <ul
@@ -130,10 +142,169 @@ export default function DashboardPanel() {
                             aria-labelledby="dropdownMenuLink"
                           >
                             <a className="dropdown-item" to="">
-                              Section 1
+                              Add Teacher
                             </a>
                             <a className="dropdown-item" to="">
-                              Section 1
+                              Teachers Information
+                            </a>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <FontAwesomeIcon
+                                icon={faTachometerAlt}
+                                className="dashboard-icon"
+                              />
+                              <span>Examinations</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <a className="dropdown-item" to="">
+                              Exam Schedule
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Exam Result
+                            </a>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <FontAwesomeIcon
+                                icon={faTachometerAlt}
+                                className="dashboard-icon"
+                              />
+                              <span>Attendance</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <a className="dropdown-item" to="">
+                              Student Attendance
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Teacher Attendance
+                            </a>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <FontAwesomeIcon
+                                icon={faTachometerAlt}
+                                className="dashboard-icon"
+                              />
+                              <span>Academics</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <a className="dropdown-item" to="">
+                              Class Timetable
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Teacher Timetable
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Subject
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Subject Group
+                            </a>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <FontAwesomeIcon
+                                icon={faTachometerAlt}
+                                className="dashboard-icon"
+                              />
+                              <span>Communicate</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <a className="dropdown-item" to="">
+                              Notice Board
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Send Email
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Send SMS
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Email / SMS Log
+                            </a>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <FontAwesomeIcon
+                                icon={faTachometerAlt}
+                                className="dashboard-icon"
+                              />
+                              <span>Online Course</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <a className="dropdown-item" to="">
+                              Online Course
                             </a>
                           </ul>
                         </div>

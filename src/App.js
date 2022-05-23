@@ -3,6 +3,7 @@ import "./App.css";
 import AllRegisterData from "./Components/Admin/AllRegisterData/AllRegisterData";
 import EditSingleUserInfo from "./Components/Admin/AllRegisterData/EditSingleUserInfo";
 import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
+import StudentAdmission from "./Components/Admin/StudentAdmission/StudentAdmission";
 import AdminRoute from "./Components/Auth/AdminRoute/AdminRoute";
 import PrivateRoute from "./Components/Auth/PrivateRoute/PrivateRoute";
 import PublicRoute from "./Components/Auth/PublicRoute/PublicRoute";
@@ -46,8 +47,19 @@ function App() {
             </AdminRoute>
           }
         />
+        <Route
+          path="/dashboard/admin/student/admission"
+          element={
+            <AdminRoute>
+              <StudentAdmission />
+            </AdminRoute>
+          }
+        />
+
+        {/* ==== Admin route end ==== */}
 
         {/* Public route */}
+
         <Route path="/" element={<Home />} />
         <Route
           path="/register"

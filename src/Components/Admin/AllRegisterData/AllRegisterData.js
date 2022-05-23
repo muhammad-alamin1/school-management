@@ -68,7 +68,7 @@ export default function AllRegisterData() {
     <div className="">
       <DashboardPanel />
       <div className="sidebar-margin ">
-        <h3 className="my-4">Students Register Data</h3>
+        <h3 className="my-4">Students Register Information</h3>
         {success && (
           <div class="alert alert-success alert-dismissible fade show">
             <strong>Success!</strong> {success}
