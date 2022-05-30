@@ -91,7 +91,9 @@ export default function Nav() {
                     aria-labelledby="dropdownMenuLink"
                   >
                     <a className="dropdown-item" to="">
-                      {parseUserData && <h6>{parseUserData.user_name}</h6>}
+                      {parseUserData && token && (
+                        <h6>{parseUserData.user_name}</h6>
+                      )}
                     </a>
                     <a onClick={removeToken} className="dropdown-item">
                       <span

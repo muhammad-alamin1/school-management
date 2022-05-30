@@ -42,7 +42,6 @@ export default function AllRegisterData() {
 
   // delete data
   const deleteStudent = async (email) => {
-    console.log(email);
     try {
       axiosInstance
         .delete(`/auth/delete/single-student/${email}`)
@@ -60,7 +59,8 @@ export default function AllRegisterData() {
           setSuccess("");
         });
     } catch (error) {
-      console.log(error);
+      setError("Student deleted failed.! There was an server side error.!");
+      setSuccess("");
     }
   };
 

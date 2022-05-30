@@ -4,11 +4,16 @@ import AllRegisterData from "./Components/Admin/AllRegisterData/AllRegisterData"
 import EditSingleUserInfo from "./Components/Admin/AllRegisterData/EditSingleUserInfo";
 import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
 import StudentAdmission from "./Components/Admin/StudentAdmission/StudentAdmission";
+import StudentAdmissionInfo from "./Components/Admin/StudentAdmission/StudentAdmissionInfo";
+import AddTeacher from "./Components/Admin/Teacher/AddTeacher";
+import EditTeacherInfo from "./Components/Admin/Teacher/EditTeacherInfo";
+import TeachersInformation from "./Components/Admin/Teacher/TeachersInformation";
 import AdminRoute from "./Components/Auth/AdminRoute/AdminRoute";
 import PrivateRoute from "./Components/Auth/PrivateRoute/PrivateRoute";
 import PublicRoute from "./Components/Auth/PublicRoute/PublicRoute";
 import BlogPage from "./Components/Pages/BlogPage/BlogPage";
 import Home from "./Components/Pages/Home/Home";
+import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
 import Register from "./Components/Pages/Register/Register";
 import SignIn from "./Components/Pages/SignIn/SignIn";
 
@@ -55,6 +60,38 @@ function App() {
             </AdminRoute>
           }
         />
+        <Route
+          path="/dashboard/admin/student/admission/info"
+          element={
+            <AdminRoute>
+              <StudentAdmissionInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/add-teacher/"
+          element={
+            <AdminRoute>
+              <AddTeacher />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/teacher/information"
+          element={
+            <AdminRoute>
+              <TeachersInformation />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/teacher/update/:id"
+          element={
+            <AdminRoute>
+              <EditTeacherInfo />
+            </AdminRoute>
+          }
+        />
 
         {/* ==== Admin route end ==== */}
 
@@ -78,6 +115,7 @@ function App() {
           }
         />
         <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/our-teachers" element={<OurTeachers />} />
       </Routes>
     </BrowserRouter>
   );

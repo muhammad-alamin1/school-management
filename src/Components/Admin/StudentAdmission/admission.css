@@ -1,0 +1,19 @@
+.admission-info img,
+#teacher-avatar {
+  width: 30px;
+  height: 30px;
+}
+
+#teacher-modal-avatar {
+  max-width: 100%;
+  height: 100%;
+}
+
+#modal-social-links a {
+  color: #000 !important;
+}
+
+#update-teacher-img {
+  width: 200px;
+  height: 150px;
+}

@@ -108,7 +108,10 @@ export default function DashboardPanel() {
                             >
                               Student Admission
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/student/admission/info"
+                            >
                               Admission Information
                             </Link>
                             <Link className="dropdown-item" to="">
@@ -141,12 +144,18 @@ export default function DashboardPanel() {
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <a className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/add-teacher/"
+                            >
                               Add Teacher
-                            </a>
-                            <a className="dropdown-item" to="">
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/teacher/information"
+                            >
                               Teachers Information
-                            </a>
+                            </Link>
                           </ul>
                         </div>
                       </li>

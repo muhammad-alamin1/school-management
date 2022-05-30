@@ -103,6 +103,7 @@ export default function Signup() {
               placeholder="Full name"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
+              required
             />
             <span className="material-icons-outlined"> person </span>
           </div>
@@ -142,7 +143,7 @@ export default function Signup() {
 
           <div className="textInput">
             <input
-              type="number"
+              type="phone"
               name="phone"
               placeholder="Phone"
               value={number}
