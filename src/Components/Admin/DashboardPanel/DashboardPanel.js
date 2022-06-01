@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
-import muhammad from "../../../images/logo.png";
+import muhammad from "../../../images/muhammad.jpeg";
 import "./dashboardPanel.css";
 
 export default function DashboardPanel() {
@@ -315,6 +315,42 @@ export default function DashboardPanel() {
                             <a className="dropdown-item" to="">
                               Online Course
                             </a>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <FontAwesomeIcon
+                                icon={faTachometerAlt}
+                                className="dashboard-icon"
+                              />
+                              <span>Others</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/add-notice"
+                            >
+                              Notice
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/notice-info"
+                            >
+                              Notice Info
+                            </Link>
                           </ul>
                         </div>
                       </li>

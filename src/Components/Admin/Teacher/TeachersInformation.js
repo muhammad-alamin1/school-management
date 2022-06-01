@@ -44,7 +44,7 @@ export default function TeachersInformation() {
   };
 
   // delete teacher
-  const deleteTeacher = (email) => {
+  const deleteTeacher = async (email) => {
     try {
       axiosInstance
         .delete(`/teacher/delete/${email}`)

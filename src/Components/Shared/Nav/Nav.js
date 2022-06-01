@@ -75,17 +75,19 @@ export default function Nav() {
               )}
               <li className="nav-item">
                 <div className="dropdown">
-                  <a
-                    className="btn btn-secondary "
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <span class="material-icons-outlined" title="Account">
-                      account_circle
-                    </span>
-                  </a>
+                  {token && (
+                    <a
+                      className="btn btn-secondary "
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <span class="material-icons-outlined" title="Account">
+                        account_circle
+                      </span>
+                    </a>
+                  )}
                   <ul
                     className="dropdown-menu"
                     aria-labelledby="dropdownMenuLink"

@@ -1,7 +1,26 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import "./notification.css";
 
 export default function Notification() {
+  const [notices, setNotices] = useState([]);
+  const [error, setError] = useState("");
+
+  // get notice data
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/notice/all-notice/")
+      .then((response) => {
+        if (response.status === 200 || response.status === 201) {
+          setNotices(response?.data.data);
+        } else {
+          setError("Data not found.!");
+        }
+      })
+      .catch((err) => {
+        setError("Data not found.!");
+      });
+  }, []);
   return (
     <div id="notification">
       <div className="container">
@@ -30,17 +49,23 @@ export default function Notification() {
           </div>
           <div className="col-md-6">
             <h2 className="my-4">Notice Board</h2>
-            <h4>JSC final exam</h4>
-            <small className="my-5">May 06, 2022</small>
-            <p>
-              The First Academy admits students of any race, color, national and
-              ethnic origin to all the rights, privileges, programs, and
-              activities generally accorded or made available to students at the
-              school. It does not discriminate on the basis of race, color,
-              national and ethnic origin in administration of its educational
-              policies, admissions policies, scholarship and loan programs, and
-              athletic and other school-administered programs.
-            </p>
+
+            {notices ? (
+              <>
+                <div>
+                  <h4>{notices[0]?.title}</h4>
+                  <small className="my-5">{notices[0]?.date}</small>
+                  <p>{notices[0]?.message}</p>
+                </div>
+                <div>
+                  <h4>{notices[1]?.title}</h4>
+                  <small className="my-5">{notices[1]?.date}</small>
+                  <p>{notices[1]?.message}</p>
+                </div>
+              </>
+            ) : (
+              <h6>Notice not available.!</h6>
+            )}
           </div>
         </div>
       </div>

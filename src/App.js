@@ -3,6 +3,9 @@ import "./App.css";
 import AllRegisterData from "./Components/Admin/AllRegisterData/AllRegisterData";
 import EditSingleUserInfo from "./Components/Admin/AllRegisterData/EditSingleUserInfo";
 import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
+import AddNotice from "./Components/Admin/Notice/AddNotice";
+import EditNotice from "./Components/Admin/Notice/EditNotice";
+import NoticeInfo from "./Components/Admin/Notice/NoticeInfo";
 import StudentAdmission from "./Components/Admin/StudentAdmission/StudentAdmission";
 import StudentAdmissionInfo from "./Components/Admin/StudentAdmission/StudentAdmissionInfo";
 import AddTeacher from "./Components/Admin/Teacher/AddTeacher";
@@ -89,6 +92,30 @@ function App() {
           element={
             <AdminRoute>
               <EditTeacherInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/add-notice"
+          element={
+            <AdminRoute>
+              <AddNotice />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/notice-info"
+          element={
+            <AdminRoute>
+              <NoticeInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/update/notice-info/:id"
+          element={
+            <AdminRoute>
+              <EditNotice />
             </AdminRoute>
           }
         />
