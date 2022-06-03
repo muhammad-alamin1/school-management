@@ -1,12 +1,18 @@
 #teacher-form input:required:valid,
 #teacher-form select:required:valid,
-#teacher-form textarea:required:valid {
+#teacher-form textarea:required:valid,
+#user-create-profile input:required:valid,
+#user-create-profile select:required:valid,
+#user-create-profile textarea:required:valid {
   border-color: mediumspringgreen;
 }
 
 #teacher-form input:required:invalid,
 #teacher-form select:required:invalid,
-#teacher-form textarea:required:invalid {
+#teacher-form textarea:required:invalid,
+#user-create-profile input:required:invalid,
+#user-create-profile select:required:invalid,
+#user-create-profile textarea:required:invalid {
   border-color: lightcoral;
 }
 

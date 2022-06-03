@@ -19,6 +19,7 @@ import Home from "./Components/Pages/Home/Home";
 import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
 import Register from "./Components/Pages/Register/Register";
 import SignIn from "./Components/Pages/SignIn/SignIn";
+import CreateProfile from "./Components/Students/Profile/CreateProfile";
 
 // https://demo.smart-school.in/admin/admin/dashboard
 
@@ -122,8 +123,19 @@ function App() {
 
         {/* ==== Admin route end ==== */}
 
-        {/* Public route */}
+        {/* User route start */}
+        <Route
+          path="/dashboard/user/create-profile/"
+          element={
+            <PrivateRoute>
+              <CreateProfile />
+            </PrivateRoute>
+          }
+        />
 
+        {/* User route end */}
+
+        {/* Public route */}
         <Route path="/" element={<Home />} />
         <Route
           path="/register"

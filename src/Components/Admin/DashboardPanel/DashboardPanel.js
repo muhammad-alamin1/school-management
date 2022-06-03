@@ -56,7 +56,7 @@ export default function DashboardPanel() {
                   {token && parseUserData && parseUserData?.role === "admin" ? (
                     <span className="user-role">Administrator</span>
                   ) : (
-                    <span className="user-role">{parseUserData?.role}</span>
+                    <span className="user-role">User</span>
                   )}
                   <span className="user-status">
                     <FontAwesomeIcon
@@ -366,20 +366,19 @@ export default function DashboardPanel() {
                           aria-expanded="false"
                         >
                           <Link to="">
-                            <FontAwesomeIcon
-                              icon={faTachometerAlt}
-                              className="dashboard-icon"
-                            />
-                            <span>Student</span>
+                            <span>Profile</span>
                           </Link>
                         </a>
                         <ul
                           className="dropdown-menu"
                           aria-labelledby="dropdownMenuLink"
                         >
-                          <a className="dropdown-item" to="">
-                            Section 1
-                          </a>
+                          <Link
+                            className="dropdown-item"
+                            to="/dashboard/user/create-profile/"
+                          >
+                            Create Profile
+                          </Link>
                           <a className="dropdown-item" to="">
                             Section 1
                           </a>
