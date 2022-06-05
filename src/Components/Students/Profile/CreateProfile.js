@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../../Hooks/axios";
 import DashboardPanel from "../../Admin/DashboardPanel/DashboardPanel";
 
 export default function CreateProfile() {
+  const history = useNavigate();
   // user data
   const user = localStorage.getItem("user");
   const parseUserData = JSON.parse(user);
@@ -12,10 +14,14 @@ export default function CreateProfile() {
   const [userClass, setClass] = useState("");
   const [section, setSection] = useState("");
   const [roll, setRoll] = useState("");
+  const [gender, setGender] = useState("");
+  const [religion, setReligion] = useState("");
+  const [dob, setDob] = useState("");
   const [currentAddress, setCurrentAddress] = useState("");
   const [permanentAddress, setPermanentAddress] = useState("");
   const [fatherName, setFatherName] = useState("");
   const [fatherPhone, setFatherPhone] = useState("");
+  const [fatherOccupation, setFatherOccupation] = useState("");
 
   const [student, setStudent] = useState({});
   const [success, setSuccess] = useState();
@@ -31,11 +37,11 @@ export default function CreateProfile() {
         if (response.status === 200 || response.status === 201) {
           setStudent(response?.data.data);
         } else {
-          setError("Data not found.!");
+          // setError("Data not found.!");
         }
       })
       .catch((err) => {
-        setError("Data not found.!");
+        // setError("Data not found.!");
       });
   }, [parseUserData.email]);
 
@@ -58,10 +64,15 @@ export default function CreateProfile() {
     formData.append("userClass", userClass);
     formData.append("section", section);
     formData.append("roll", roll);
+    formData.append("religion", religion);
+    formData.append("gender", gender);
+    formData.append("religion", religion);
+    formData.append("dob", dob);
     formData.append("currentAddress", currentAddress);
     formData.append("permanentAddress", permanentAddress);
     formData.append("fatherName", fatherName);
     formData.append("fatherPhone", fatherPhone);
+    formData.append("fatherOccupation", fatherOccupation);
     formData.append("avatar", file);
 
     // axios post req
@@ -73,11 +84,11 @@ export default function CreateProfile() {
         },
       })
       .then(function (response) {
-        console.log(response);
         if (response.status === 200 || response.status === 201) {
           setSuccess(response.data.message);
           setError("");
           setErrors("");
+          history("/dashboard");
         } else {
           setSuccess("");
           setError("Profile created failed.!");
@@ -199,11 +210,11 @@ export default function CreateProfile() {
                 <option value="" disabled>
                   Class
                 </option>
-                <option value="class-6">Class 6</option>
-                <option value="class-7">Class 7</option>
-                <option value="class-8">Class 8</option>
-                <option value="class-9">Class 9</option>
-                <option value="class-10">Class 10</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
               </select>
               {errors && (
                 <div style={{ color: "red" }}>
@@ -247,8 +258,63 @@ export default function CreateProfile() {
                 </div>
               )}
             </div>
+            <div class="col">
+              <label for="gender">Gender *</label>
+              <select
+                name="gender"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                className="form-control"
+                required
+              >
+                <option value="" disabled>
+                  Gender
+                </option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+              </select>
+              {errors && (
+                <div style={{ color: "red" }}>
+                  {errors?.gender && errors?.gender.msg}
+                </div>
+              )}
+            </div>
+            <div class="col">
+              <label for="religion">Religion *</label>
+              <input
+                name="religion"
+                value={religion}
+                onChange={(e) => setReligion(e.target.value)}
+                className="form-control"
+                placeholder="Religion"
+                required
+              />
+              {errors && (
+                <div style={{ color: "red" }}>
+                  {errors?.religion && errors?.religion.msg}
+                </div>
+              )}
+            </div>
           </div>
           <div class="row my-4">
+            <div class="col">
+              <label for="dob">Date of birth *</label>
+              <input
+                type="date"
+                name="dob"
+                value={dob}
+                onChange={(e) => setDob(e.target.value)}
+                className="form-control"
+                required
+              />
+              {errors && (
+                <div style={{ color: "red" }}>
+                  {errors?.dob && errors?.dob.msg}
+                </div>
+              )}
+            </div>
+
             <div class="col">
               <label for="avatar">Image *</label>
               <input
@@ -333,6 +399,24 @@ export default function CreateProfile() {
               {errors && (
                 <div style={{ color: "red" }}>
                   {errors?.fatherPhone && errors?.fatherPhone.msg}
+                </div>
+              )}
+            </div>
+
+            <div class="col">
+              <label for="fatherOccupation">Father Occupation *</label>
+              <input
+                type="text"
+                name="fatherOccupation"
+                defaultValue={fatherOccupation}
+                onChange={(e) => setFatherOccupation(e.target.value)}
+                className="form-control"
+                placeholder="Father Occupation"
+                required
+              />
+              {errors && (
+                <div style={{ color: "red" }}>
+                  {errors?.fatherOccupation && errors?.fatherOccupation.msg}
                 </div>
               )}
             </div>

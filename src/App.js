@@ -6,6 +6,7 @@ import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
 import AddNotice from "./Components/Admin/Notice/AddNotice";
 import EditNotice from "./Components/Admin/Notice/EditNotice";
 import NoticeInfo from "./Components/Admin/Notice/NoticeInfo";
+import ProfileInformation from "./Components/Admin/RegisterUserProfileData/ProfileInformation";
 import StudentAdmission from "./Components/Admin/StudentAdmission/StudentAdmission";
 import StudentAdmissionInfo from "./Components/Admin/StudentAdmission/StudentAdmissionInfo";
 import AddTeacher from "./Components/Admin/Teacher/AddTeacher";
@@ -20,6 +21,8 @@ import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
 import Register from "./Components/Pages/Register/Register";
 import SignIn from "./Components/Pages/SignIn/SignIn";
 import CreateProfile from "./Components/Students/Profile/CreateProfile";
+import EditProfile from "./Components/Students/Profile/EditProfile";
+import Profile from "./Components/Students/Profile/Profile";
 
 // https://demo.smart-school.in/admin/admin/dashboard
 
@@ -45,6 +48,14 @@ function App() {
           element={
             <AdminRoute>
               <AllRegisterData />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/all-register/profile-data"
+          element={
+            <AdminRoute>
+              <ProfileInformation />
             </AdminRoute>
           }
         />
@@ -129,6 +140,22 @@ function App() {
           element={
             <PrivateRoute>
               <CreateProfile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/profile/"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="dashboard/user/update/profile/:email"
+          element={
+            <PrivateRoute>
+              <EditProfile />
             </PrivateRoute>
           }
         />

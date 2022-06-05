@@ -9,13 +9,19 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+import axiosInstance from "../../../Hooks/axios";
 import muhammad from "../../../images/muhammad.jpeg";
+import noPhoto from "../../../images/nophoto.png";
 import "./dashboardPanel.css";
 
 export default function DashboardPanel() {
+  const [profile, setProfile] = useState({});
+
+  const history = useNavigate();
+
   // token
   const cookies = new Cookies();
   const token = cookies.get("access_token");
@@ -24,10 +30,29 @@ export default function DashboardPanel() {
   const user = localStorage.getItem("user");
   const parseUserData = JSON.parse(user);
 
+  // get single user profile data
+  useEffect(() => {
+    axiosInstance
+      .get(`/user/single-user/${parseUserData.email}`)
+      .then((response) => {
+        if (response.status === 200 || response.status === 201) {
+          setProfile(response?.data.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   // remove token or logout
   const removeToken = () => {
-    // localStorage.removeItem("user");
-    cookies.remove("access_token");
+    if (token) {
+      if (parseUserData) {
+        cookies.remove("access_token");
+        // localStorage.removeItem("user");
+        // history("/login");
+      }
+    }
   };
 
   return (
@@ -41,11 +66,25 @@ export default function DashboardPanel() {
               </div>
               <div className="sidebar-header">
                 <div className="user-pic">
-                  <img
-                    className="img-responsive img-rounded"
-                    src={muhammad}
-                    alt="User picture"
-                  />
+                  {parseUserData.email === "muhammad.alamindev01@gmail.com" ? (
+                    <img
+                      className="img-responsive img-rounded"
+                      src={muhammad}
+                      alt="User picture"
+                    />
+                  ) : profile && profile.avatar ? (
+                    <img
+                      className="img-responsive img-rounded"
+                      src={`http://localhost:8000/uploads/${profile.avatar}`}
+                      alt="User picture"
+                    />
+                  ) : (
+                    <img
+                      className="img-responsive img-rounded"
+                      src={noPhoto}
+                      alt="User picture"
+                    />
+                  )}
                 </div>
                 <div className="user-info">
                   <span className="user-name">
@@ -101,6 +140,12 @@ export default function DashboardPanel() {
                               to="/dashboard/admin/all-register"
                             >
                               All Student Register Data
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/all-register/profile-data"
+                            >
+                              All Register Student Profile Info
                             </Link>
                             <Link
                               className="dropdown-item"
@@ -373,15 +418,32 @@ export default function DashboardPanel() {
                           className="dropdown-menu"
                           aria-labelledby="dropdownMenuLink"
                         >
+                          {!profile ? (
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/create-profile/"
+                            >
+                              Create Profile
+                            </Link>
+                          ) : (
+                            ""
+                          )}
                           <Link
                             className="dropdown-item"
-                            to="/dashboard/user/create-profile/"
+                            to="/dashboard/user/profile/"
                           >
-                            Create Profile
+                            Profile
                           </Link>
-                          <a className="dropdown-item" to="">
-                            Section 1
-                          </a>
+                          {profile ? (
+                            <Link
+                              className="dropdown-item"
+                              to={`/dashboard/user/update/profile/${profile.email}`}
+                            >
+                              Update Profile
+                            </Link>
+                          ) : (
+                            ""
+                          )}
                         </ul>
                       </div>
                     </li>
@@ -406,34 +468,11 @@ export default function DashboardPanel() {
               </Link>
             </div>
           </nav>
-          {/* <div className="text-white" id="dash">
-        <div className="row">
-          <div className="col-md-4 text-dark">
-            <div class="card">
-              <div class="card-body text-center">
-                <h5 class="card-title">Present Students</h5>
-                <h3 class="card-text">591/1000</h3>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 text-dark">
-            <div class="card">
-              <div class="card-body text-center">
-                <h5 class="card-title">Present Students</h5>
-                <h3 class="card-text">591/1000</h3>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 text-dark">
-            <div class="card">
-              <div class="card-body text-center">
-                <h5 class="card-title">Present Teachers</h5>
-                <h3 class="card-text">591/1000</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
+          {parseUserData.email === "muhammad.alamindev01@gmail.com"
+            ? // <DashboardFront />
+              ""
+            : // <Profile />
+              ""}
         </div>
       ) : (
         ""
