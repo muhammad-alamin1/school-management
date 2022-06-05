@@ -32,7 +32,7 @@ export default function CreateProfile() {
   // get login student data
   useEffect(() => {
     axiosInstance
-      .get(`http://localhost:8000/auth/single-student/${parseUserData.email}`)
+      .get(`/auth/single-student/${parseUserData.email}`)
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
           setStudent(response?.data.data);

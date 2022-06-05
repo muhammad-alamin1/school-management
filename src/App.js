@@ -15,6 +15,7 @@ import TeachersInformation from "./Components/Admin/Teacher/TeachersInformation"
 import AdminRoute from "./Components/Auth/AdminRoute/AdminRoute";
 import PrivateRoute from "./Components/Auth/PrivateRoute/PrivateRoute";
 import PublicRoute from "./Components/Auth/PublicRoute/PublicRoute";
+import PageNotFound from "./Components/Error/PageNotFound";
 import BlogPage from "./Components/Pages/BlogPage/BlogPage";
 import Home from "./Components/Pages/Home/Home";
 import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
@@ -182,6 +183,7 @@ function App() {
         />
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/our-teachers" element={<OurTeachers />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

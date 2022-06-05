@@ -7,8 +7,6 @@ import "./profile.css";
 export default function Profile() {
   const [profile, setProfile] = useState({});
 
-  console.log(profile);
-
   // user data
   const user = localStorage.getItem("user");
   const parseUserData = JSON.parse(user);
