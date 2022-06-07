@@ -401,52 +401,111 @@ export default function DashboardPanel() {
                       </li>
                     </>
                   ) : (
-                    <li className="sidebar-dropdown my-2">
-                      <div className="dropdown">
-                        <a
-                          className="btn "
-                          href="#"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <Link to="">
-                            <span>Profile</span>
-                          </Link>
-                        </a>
-                        <ul
-                          className="dropdown-menu"
-                          aria-labelledby="dropdownMenuLink"
-                        >
-                          {!profile ? (
-                            <Link
-                              className="dropdown-item"
-                              to="/dashboard/user/create-profile/"
-                            >
-                              Create Profile
-                            </Link>
-                          ) : (
-                            ""
-                          )}
-                          <Link
-                            className="dropdown-item"
-                            to="/dashboard/user/profile/"
+                    <>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
                           >
-                            Profile
-                          </Link>
-                          {profile ? (
+                            <Link to="">
+                              <span>Profile</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            {!profile ? (
+                              <Link
+                                className="dropdown-item"
+                                to="/dashboard/user/create-profile/"
+                              >
+                                Create Profile
+                              </Link>
+                            ) : (
+                              ""
+                            )}
                             <Link
                               className="dropdown-item"
-                              to={`/dashboard/user/update/profile/${profile.email}`}
+                              to="/dashboard/user/profile/"
                             >
-                              Update Profile
+                              Profile
                             </Link>
-                          ) : (
-                            ""
-                          )}
-                        </ul>
-                      </div>
-                    </li>
+                            {profile ? (
+                              <Link
+                                className="dropdown-item"
+                                to={`/dashboard/user/update/profile/${profile.email}`}
+                              >
+                                Update Profile
+                              </Link>
+                            ) : (
+                              ""
+                            )}
+                          </ul>
+                        </div>
+                      </li>
+
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <span>Online Course</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/online-course/class-6/"
+                            >
+                              Class-6
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/online-course/class-7/"
+                            >
+                              Class-7
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/online-course/class-8/"
+                            >
+                              Class-8
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/online-course/class-9/"
+                            >
+                              Class-9
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/online-course/class-10/"
+                            >
+                              Class-10
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/online-course/ssc-candidate/"
+                            >
+                              SSC Candidate
+                            </Link>
+                          </ul>
+                        </div>
+                      </li>
+                    </>
                   )}
                 </ul>
               </div>
