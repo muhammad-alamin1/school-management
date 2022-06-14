@@ -25,7 +25,7 @@ export default function HeroBox() {
         </div>
 
         <div className="card col-md-4 card-div">
-          <Link to="">
+          <Link to="/our-student">
             <div className="card-body">
               <FontAwesomeIcon icon={faGraduationCap} className="header-icon" />
               <h5 className="card-title">Our Top Students</h5>

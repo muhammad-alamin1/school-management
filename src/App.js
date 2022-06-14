@@ -12,6 +12,8 @@ import StudentAdmissionInfo from "./Components/Admin/StudentAdmission/StudentAdm
 import AddTeacher from "./Components/Admin/Teacher/AddTeacher";
 import EditTeacherInfo from "./Components/Admin/Teacher/EditTeacherInfo";
 import TeachersInformation from "./Components/Admin/Teacher/TeachersInformation";
+import AddTopStudent from "./Components/Admin/TopStudent/AddTopStudent";
+import TopStudentInfo from "./Components/Admin/TopStudent/TopStudentInfo";
 import AdminRoute from "./Components/Auth/AdminRoute/AdminRoute";
 import PrivateRoute from "./Components/Auth/PrivateRoute/PrivateRoute";
 import PublicRoute from "./Components/Auth/PublicRoute/PublicRoute";
@@ -61,6 +63,7 @@ import Home from "./Components/Pages/Home/Home";
 import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
 import Register from "./Components/Pages/Register/Register";
 import SignIn from "./Components/Pages/SignIn/SignIn";
+import TopStudent from "./Components/Pages/TopStudent/TopStudent";
 import Class10 from "./Components/Students/OnlineCourse/Class10";
 import Class6 from "./Components/Students/OnlineCourse/Class6";
 import Class7 from "./Components/Students/OnlineCourse/Class7";
@@ -175,6 +178,22 @@ function App() {
           element={
             <AdminRoute>
               <EditNotice />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/student/add-top-student/"
+          element={
+            <AdminRoute>
+              <AddTopStudent />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/student/top-student/all-information"
+          element={
+            <AdminRoute>
+              <TopStudentInfo />
             </AdminRoute>
           }
         />
@@ -597,6 +616,7 @@ function App() {
         />
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/our-teachers" element={<OurTeachers />} />
+        <Route path="/our-student" element={<TopStudent />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

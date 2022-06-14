@@ -159,10 +159,16 @@ export default function DashboardPanel() {
                             >
                               Admission Information
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/student/add-top-student/"
+                            >
                               Add Top Student
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/student/top-student/all-information"
+                            >
                               Top Student Information
                             </Link>
                           </ul>
