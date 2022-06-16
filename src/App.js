@@ -3,6 +3,8 @@ import "./App.css";
 import AllRegisterData from "./Components/Admin/AllRegisterData/AllRegisterData";
 import EditSingleUserInfo from "./Components/Admin/AllRegisterData/EditSingleUserInfo";
 import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
+import AddExamSchedule from "./Components/Admin/Exam/AddExamSchedule";
+import ExamScheduleInformation from "./Components/Admin/Exam/ExamScheduleInfo";
 import AddNotice from "./Components/Admin/Notice/AddNotice";
 import EditNotice from "./Components/Admin/Notice/EditNotice";
 import NoticeInfo from "./Components/Admin/Notice/NoticeInfo";
@@ -64,6 +66,8 @@ import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
 import Register from "./Components/Pages/Register/Register";
 import SignIn from "./Components/Pages/SignIn/SignIn";
 import TopStudent from "./Components/Pages/TopStudent/TopStudent";
+import ClassTimeTable from "./Components/Students/ClassTimeTable/ClassTimeTable";
+import ExamSchedule from "./Components/Students/Examination/ExamSchedule";
 import Class10 from "./Components/Students/OnlineCourse/Class10";
 import Class6 from "./Components/Students/OnlineCourse/Class6";
 import Class7 from "./Components/Students/OnlineCourse/Class7";
@@ -194,6 +198,22 @@ function App() {
           element={
             <AdminRoute>
               <TopStudentInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/add-exam-schedule"
+          element={
+            <AdminRoute>
+              <AddExamSchedule />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/exam-schedule/information"
+          element={
+            <AdminRoute>
+              <ExamScheduleInformation />
             </AdminRoute>
           }
         />
@@ -590,6 +610,22 @@ function App() {
           element={
             <PrivateRoute>
               <EngGrammar6 />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/class-time-table/"
+          element={
+            <PrivateRoute>
+              <ClassTimeTable />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/exam-schedule/"
+          element={
+            <PrivateRoute>
+              <ExamSchedule />
             </PrivateRoute>
           }
         />

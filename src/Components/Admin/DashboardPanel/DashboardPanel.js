@@ -231,9 +231,18 @@ export default function DashboardPanel() {
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <a className="dropdown-item" to="">
-                              Exam Schedule
-                            </a>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/add-exam-schedule"
+                            >
+                              Add Exam Schedule
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/exam-schedule/information"
+                            >
+                              Exam Schedule Information
+                            </Link>
                             <a className="dropdown-item" to="">
                               Exam Result
                             </a>
@@ -507,6 +516,131 @@ export default function DashboardPanel() {
                               to="/dashboard/user/online-course/ssc-candidate/"
                             >
                               SSC Candidate
+                            </Link>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <span>Class TimeTable</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link className="dropdown-item" to="">
+                              Class-6
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Class-7
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Class-8
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Class-9
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Class-10
+                            </Link>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <span>Examinations</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/exam-schedule/"
+                            >
+                              Exam Schedule
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Exam Result
+                            </Link>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <span>Notice Board</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link className="dropdown-item" to="">
+                              Notice
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Events
+                            </Link>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <span>Tuitions</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link className="dropdown-item" to="">
+                              Class-6
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Class-7
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Class-8
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Class-9
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Class-10
                             </Link>
                           </ul>
                         </div>
