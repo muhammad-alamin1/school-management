@@ -65,7 +65,7 @@ export default function ExamSchedule() {
                       <a
                         href={`http://localhost:8000/uploads/pdf/${exam.file}`}
                         target="_blank"
-                        className="direction"
+                        className="direction btn btn-outline-info"
                       >
                         <FontAwesomeIcon
                           icon={faEye}
@@ -76,10 +76,8 @@ export default function ExamSchedule() {
                     </td>
                     <td>
                       <button
-                        // href={`http://localhost:8000/uploads/pdf/${exam.file}`}
-                        // download
                         onClick={() => downloadExamSchedule(exam.file)}
-                        className="direction"
+                        className="direction btn btn-outline-success"
                       >
                         <span className="material-icons-outlined">
                           download

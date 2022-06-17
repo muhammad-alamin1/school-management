@@ -14,6 +14,7 @@ import StudentAdmissionInfo from "./Components/Admin/StudentAdmission/StudentAdm
 import AddTeacher from "./Components/Admin/Teacher/AddTeacher";
 import EditTeacherInfo from "./Components/Admin/Teacher/EditTeacherInfo";
 import TeachersInformation from "./Components/Admin/Teacher/TeachersInformation";
+import AddTimeTable from "./Components/Admin/TimeTable/AddTimeTable";
 import AddTopStudent from "./Components/Admin/TopStudent/AddTopStudent";
 import TopStudentInfo from "./Components/Admin/TopStudent/TopStudentInfo";
 import AdminRoute from "./Components/Auth/AdminRoute/AdminRoute";
@@ -66,8 +67,13 @@ import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
 import Register from "./Components/Pages/Register/Register";
 import SignIn from "./Components/Pages/SignIn/SignIn";
 import TopStudent from "./Components/Pages/TopStudent/TopStudent";
-import ClassTimeTable from "./Components/Students/ClassTimeTable/ClassTimeTable";
+import ClassTimeTable6 from "./Components/Students/ClassTimeTable/ClassTimeTable";
+import ClassTimeTable10 from "./Components/Students/ClassTimeTable/ClassTimeTable10";
+import ClassTimeTable7 from "./Components/Students/ClassTimeTable/ClassTimeTable7";
+import ClassTimeTable8 from "./Components/Students/ClassTimeTable/ClassTimeTable8";
+import ClassTimeTable9 from "./Components/Students/ClassTimeTable/ClassTimeTable9";
 import ExamSchedule from "./Components/Students/Examination/ExamSchedule";
+import Notice from "./Components/Students/Notification/Notice";
 import Class10 from "./Components/Students/OnlineCourse/Class10";
 import Class6 from "./Components/Students/OnlineCourse/Class6";
 import Class7 from "./Components/Students/OnlineCourse/Class7";
@@ -214,6 +220,14 @@ function App() {
           element={
             <AdminRoute>
               <ExamScheduleInformation />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/class-time-table"
+          element={
+            <AdminRoute>
+              <AddTimeTable />
             </AdminRoute>
           }
         />
@@ -614,10 +628,42 @@ function App() {
           }
         />
         <Route
-          path="/dashboard/user/class-time-table/"
+          path="/dashboard/user/class-time-table/class-6"
           element={
             <PrivateRoute>
-              <ClassTimeTable />
+              <ClassTimeTable6 />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/class-time-table/class-7"
+          element={
+            <PrivateRoute>
+              <ClassTimeTable7 />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/class-time-table/class-8"
+          element={
+            <PrivateRoute>
+              <ClassTimeTable8 />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/class-time-table/class-9"
+          element={
+            <PrivateRoute>
+              <ClassTimeTable9 />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/class-time-table/class-10"
+          element={
+            <PrivateRoute>
+              <ClassTimeTable10 />
             </PrivateRoute>
           }
         />
@@ -626,6 +672,14 @@ function App() {
           element={
             <PrivateRoute>
               <ExamSchedule />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/notice/"
+          element={
+            <PrivateRoute>
+              <Notice />
             </PrivateRoute>
           }
         />

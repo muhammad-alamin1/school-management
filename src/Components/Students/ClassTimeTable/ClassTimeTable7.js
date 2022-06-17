@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import axiosInstance from "../../../Hooks/axios";
 import DashboardPanel from "../../Admin/DashboardPanel/DashboardPanel";
 
-export default function ClassTimeTable6() {
+export default function ClassTimeTable7() {
   const [classRouting, setClassRouting] = useState({});
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
 
-  // get all student data
+  // get all routing data
   useEffect(() => {
     setLoading(true);
     axiosInstance
@@ -17,8 +17,9 @@ export default function ClassTimeTable6() {
         // console.log(response.data.data);
         if (response.status === 200 || response.status === 201) {
           const filterData = response.data.data.filter((cls) => {
-            return cls.user_class === "Class-6";
+            return cls.user_class === "Class-7";
           });
+
           if (filterData) {
             setClassRouting(filterData[0]);
           } else {
@@ -38,7 +39,7 @@ export default function ClassTimeTable6() {
     <>
       <DashboardPanel />
       <div className="sidebar-margin">
-        <h3 className="my-4">Class TimeTable (Class-6)</h3>
+        <h3 className="my-4">Class TimeTable (Class-7)</h3>
         <div>
           {success && (
             <div class="alert alert-success alert-dismissible fade show">
@@ -50,7 +51,6 @@ export default function ClassTimeTable6() {
               ></button>
             </div>
           )}
-
           {!error ? (
             <embed
               src={`http://localhost:8000/uploads/pdf/${classRouting.file}`}

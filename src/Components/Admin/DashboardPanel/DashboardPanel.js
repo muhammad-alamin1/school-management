@@ -300,9 +300,12 @@ export default function DashboardPanel() {
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <a className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/class-time-table"
+                            >
                               Class Timetable
-                            </a>
+                            </Link>
                             <a className="dropdown-item" to="">
                               Teacher Timetable
                             </a>
@@ -537,19 +540,34 @@ export default function DashboardPanel() {
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/class-time-table/class-6"
+                            >
                               Class-6
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/class-time-table/class-7"
+                            >
                               Class-7
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/class-time-table/class-8"
+                            >
                               Class-8
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/class-time-table/class-9"
+                            >
                               Class-9
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/class-time-table/class-10"
+                            >
                               Class-10
                             </Link>
                           </ul>
@@ -601,7 +619,10 @@ export default function DashboardPanel() {
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/notice/"
+                            >
                               Notice
                             </Link>
                             <Link className="dropdown-item" to="">
