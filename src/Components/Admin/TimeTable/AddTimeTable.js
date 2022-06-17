@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axiosInstance from "../../../Hooks/axios";
 import DashboardPanel from "../../Admin/DashboardPanel/DashboardPanel";
+import TimeTableInfo from "./TimeTableInfo";
 
 export default function AddTimeTable() {
   const [error, setError] = useState();
@@ -125,6 +126,10 @@ export default function AddTimeTable() {
             className="btn btn-outline-success my-3"
           />
         </form>
+        <div className="class-time-table-info">
+          <h3 className="my-4">Class Time Table Information</h3>
+          <TimeTableInfo />
+        </div>
       </div>
     </>
   );
