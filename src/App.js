@@ -83,6 +83,7 @@ import SSCCandidate from "./Components/Students/OnlineCourse/SSCCandidate";
 import CreateProfile from "./Components/Students/Profile/CreateProfile";
 import EditProfile from "./Components/Students/Profile/EditProfile";
 import Profile from "./Components/Students/Profile/Profile";
+import ChangePassword from "./Components/Students/Settings/ChangePassword";
 
 // https://demo.smart-school.in/admin/admin/dashboard
 
@@ -680,6 +681,14 @@ function App() {
           element={
             <PrivateRoute>
               <Notice />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/settings/change-password/"
+          element={
+            <PrivateRoute>
+              <ChangePassword />
             </PrivateRoute>
           }
         />

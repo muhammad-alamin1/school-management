@@ -9,7 +9,7 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axiosInstance from "../../../Hooks/axios";
@@ -368,7 +368,7 @@ export default function DashboardPanel() {
                                 icon={faTachometerAlt}
                                 className="dashboard-icon"
                               />
-                              <span>Online Course</span>
+                              <span>Employee</span>
                             </Link>
                           </a>
                           <ul
@@ -376,7 +376,10 @@ export default function DashboardPanel() {
                             aria-labelledby="dropdownMenuLink"
                           >
                             <a className="dropdown-item" to="">
-                              Online Course
+                              Liberian
+                            </a>
+                            <a className="dropdown-item" to="">
+                              Others
                             </a>
                           </ul>
                         </div>
@@ -641,15 +644,18 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <span>Tuitions</span>
+                              <span>Settings</span>
                             </Link>
                           </a>
                           <ul
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <Link className="dropdown-item" to="">
-                              Class-6
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/settings/change-password/"
+                            >
+                              Change Password
                             </Link>
                             <Link className="dropdown-item" to="">
                               Class-7
