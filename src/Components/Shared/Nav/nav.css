@@ -1,3 +1,15 @@
 #logout {
   cursor: pointer;
 }
+
+#nav-academics:hover {
+  color: #fff;
+  border-color: #fff !important;
+}
+
+#dropdown-nav-academics:hover,
+#dropdown-nav-academics:active,
+#dropdown-nav-academics:focus {
+  color: #fff;
+  border-color: #fff !important;
+}

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AllRegisterData from "./Components/Admin/AllRegisterData/AllRegisterData";
 import EditSingleUserInfo from "./Components/Admin/AllRegisterData/EditSingleUserInfo";
+import ContactInfo from "./Components/Admin/Contact/ContactInfo";
 import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
 import AddExamSchedule from "./Components/Admin/Exam/AddExamSchedule";
 import ExamScheduleInformation from "./Components/Admin/Exam/ExamScheduleInfo";
@@ -61,7 +62,9 @@ import ICTSSC from "./Components/Components/Course/SSCCandidate/ICT";
 import MathSSC from "./Components/Components/Course/SSCCandidate/Math";
 import PhysicsSSC from "./Components/Components/Course/SSCCandidate/Physics";
 import PageNotFound from "./Components/Error/PageNotFound";
+import AboutUs from "./Components/Pages/AboutUs/AboutUs";
 import BlogPage from "./Components/Pages/BlogPage/BlogPage";
+import ContactUs from "./Components/Pages/ContactUs/ContactUs";
 import Home from "./Components/Pages/Home/Home";
 import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
 import Register from "./Components/Pages/Register/Register";
@@ -229,6 +232,14 @@ function App() {
           element={
             <AdminRoute>
               <AddTimeTable />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/contact-us-information"
+          element={
+            <AdminRoute>
+              <ContactInfo />
             </AdminRoute>
           }
         />
@@ -716,6 +727,8 @@ function App() {
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/our-teachers" element={<OurTeachers />} />
         <Route path="/our-student" element={<TopStudent />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

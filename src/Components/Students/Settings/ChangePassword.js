@@ -21,7 +21,6 @@ export default function ChangePassword() {
     setValues(newData);
   };
 
-  console.log(values);
   // handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +41,6 @@ export default function ChangePassword() {
         setLoading(false);
       })
       .catch(function (error) {
-        console.log(error.response.data);
         setSuccess("");
         setErrors(error?.response.data.errors);
         setError("Password Updated failed.!");

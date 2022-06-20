@@ -417,6 +417,12 @@ export default function DashboardPanel() {
                             >
                               Notice Info
                             </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/contact-us-information"
+                            >
+                              Contact Data Info
+                            </Link>
                           </ul>
                         </div>
                       </li>

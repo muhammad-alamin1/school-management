@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "./aboutus.css";
 
 export default function AboutUs() {
@@ -17,9 +17,9 @@ export default function AboutUs() {
         led our young men and women to serve others in Orlando and across the
         globe.
       </h6>
-      <a href="">
+      <Link to="/about-us">
         <button>Learn More</button>
-      </a>
+      </Link>
     </div>
   );
 }

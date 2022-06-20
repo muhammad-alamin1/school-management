@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import logo from "../../../images/logo.webp";
@@ -45,25 +44,85 @@ export default function Nav() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" to="">
-                  Admissions
-                </a>
+                <Link className="nav-link" aria-current="page" to="/about-us">
+                  About Us
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/blogs">
                   Blog
                 </Link>
               </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="btn"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="dropdown-nav-academics"
+                >
+                  <Link className="" aria-current="page" to="">
+                    <span id="nav-academics">Academics</span>
+                  </Link>
+                </a>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <Link className="dropdown-item" to="">
+                    Facilities
+                  </Link>
+                  <Link className="dropdown-item" to="">
+                    School Uniform
+                  </Link>
+                  <Link className="dropdown-item" to="">
+                    Principal Message
+                  </Link>
+                  <Link className="dropdown-item" to="">
+                    Know Us
+                  </Link>
+                  <Link className="dropdown-item" to="">
+                    Teacher
+                  </Link>
+                  <Link className="dropdown-item" to="">
+                    Top Student
+                  </Link>
+                  <Link className="dropdown-item" to="">
+                    Student Council
+                  </Link>
+                  <Link className="dropdown-item" to="">
+                    Career Counselling
+                  </Link>
+                  <Link className="dropdown-item" to="">
+                    Approach
+                  </Link>
+                </ul>
+              </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="">
-                  Review
+                <Link className="nav-link" aria-current="page" to="/">
+                  Gallery
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/dashboard">
-                  Dashboard
+                <Link className="nav-link" aria-current="page" to="/">
+                  News
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/contact-us">
+                  Contact
+                </Link>
+              </li>
+              {token ? (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/dashboard">
+                    Dashboard
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
               {!token && (
                 <>
                   <li className="nav-item">

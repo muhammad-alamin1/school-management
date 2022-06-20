@@ -1,0 +1,45 @@
+#contactUS h2 {
+  font-weight: bold;
+}
+#contactUS form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#contactUS label {
+  font-size: 1rem;
+}
+
+#contactUS input:focus,
+#contactUS textarea:focus {
+  border: 0.2px solid #337ab7;
+  box-shadow: none;
+}
+
+#contactUsSubmitBtn {
+  background-color: #337ab7;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+}
+
+#contactUsCard {
+  width: 31%;
+  height: 210px;
+  background-color: #f1f1f1;
+  margin: 13px;
+}
+
+#contactUsCard:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
+
+#contactUsCard span {
+  font-size: 1rem;
+}
