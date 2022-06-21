@@ -1,0 +1,21 @@
+#gallery h2 {
+  font-weight: bold;
+}
+
+#galleryCard {
+  width: 31%;
+  height: 230px;
+  background-color: #f1f1f1;
+  margin: 13px;
+}
+
+#galleryCard img {
+  width: 100%;
+  height: auto;
+}
+
+#galleryCard img:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}

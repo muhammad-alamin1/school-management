@@ -65,9 +65,13 @@ import PageNotFound from "./Components/Error/PageNotFound";
 import AboutUs from "./Components/Pages/AboutUs/AboutUs";
 import BlogPage from "./Components/Pages/BlogPage/BlogPage";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
+import Gallery from "./Components/Pages/Gallery/Gallery";
 import Home from "./Components/Pages/Home/Home";
+import OnlineAdmission from "./Components/Pages/OnlineAdmission/OnlineAdmission";
 import OurTeachers from "./Components/Pages/OurTeachersList/OurTeachers";
+import PrincipleMessage from "./Components/Pages/PrincipleSms/PrincipleMessage";
 import Register from "./Components/Pages/Register/Register";
+import SchoolUniform from "./Components/Pages/SchoolUniform/SchoolUniform";
 import SignIn from "./Components/Pages/SignIn/SignIn";
 import TopStudent from "./Components/Pages/TopStudent/TopStudent";
 import ClassTimeTable6 from "./Components/Students/ClassTimeTable/ClassTimeTable";
@@ -729,6 +733,10 @@ function App() {
         <Route path="/our-student" element={<TopStudent />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/page/gallery" element={<Gallery />} />
+        <Route path="/page/principle-message" element={<PrincipleMessage />} />
+        <Route path="/page/school-uniform" element={<SchoolUniform />} />
+        <Route path="/page/online-admission" element={<OnlineAdmission />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

@@ -194,7 +194,9 @@ export default function ContactUs() {
                 style={{ fontSize: "3rem", marginBottom: "2rem" }}
               />
               <h4>OUR LOCATION</h4>
-              <span>7 No. Betmore, Mathbaria, Pirojpur, Bangladesh.</span>
+              <span>
+                7 No. Betmore Rejpara, Mathbaria, Pirojpur, Bangladesh.
+              </span>
             </div>
           </div>
           <div class="card text-center" id="contactUsCard">

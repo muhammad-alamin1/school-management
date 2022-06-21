@@ -1,0 +1,12 @@
+#uniform p {
+  font-size: 1rem;
+}
+
+#uniform h2,
+h5 {
+  font-weight: bold;
+}
+
+.uniform-para p {
+  line-height: 10px;
+}

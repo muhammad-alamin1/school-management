@@ -1,0 +1,9 @@
+#onlineAdmission h2,
+h6 {
+  font-weight: bold;
+}
+
+#onlineAdmission input:focus,
+#onlineAdmission select:focus {
+  box-shadow: none;
+}

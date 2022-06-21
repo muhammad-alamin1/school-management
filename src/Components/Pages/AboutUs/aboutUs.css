@@ -10,3 +10,7 @@
 #aboutUs small {
   font-size: 0.8rem;
 }
+
+#aboutUs h2 {
+  font-weight: bold;
+}

@@ -44,13 +44,17 @@ export default function Nav() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/about-us">
-                  About Us
+                <Link
+                  className="nav-link"
+                  aria-current="page"
+                  to="/page/online-admission"
+                >
+                  Online Admission
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/blogs">
-                  Blog
+                <Link className="nav-link" aria-current="page" to="/about-us">
+                  About Us
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -73,20 +77,23 @@ export default function Nav() {
                   <Link className="dropdown-item" to="">
                     Facilities
                   </Link>
-                  <Link className="dropdown-item" to="">
+                  <Link className="dropdown-item" to="/page/school-uniform">
                     School Uniform
                   </Link>
-                  <Link className="dropdown-item" to="">
+                  <Link className="dropdown-item" to="/page/principle-message">
                     Principal Message
                   </Link>
                   <Link className="dropdown-item" to="">
                     Know Us
                   </Link>
-                  <Link className="dropdown-item" to="">
+                  <Link className="dropdown-item" to="/our-teachers">
                     Teacher
                   </Link>
                   <Link className="dropdown-item" to="">
                     Top Student
+                  </Link>
+                  <Link className="dropdown-item" to="/blogs">
+                    Blog
                   </Link>
                   <Link className="dropdown-item" to="">
                     Student Council
@@ -100,7 +107,11 @@ export default function Nav() {
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
+                <Link
+                  className="nav-link"
+                  aria-current="page"
+                  to="/page/gallery"
+                >
                   Gallery
                 </Link>
               </li>
