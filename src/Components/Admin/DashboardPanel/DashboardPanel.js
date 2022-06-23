@@ -302,6 +302,12 @@ export default function DashboardPanel() {
                           >
                             <Link
                               className="dropdown-item"
+                              to="/dashboard/admin/online-admission-information"
+                            >
+                              Online Admission Info
+                            </Link>
+                            <Link
+                              className="dropdown-item"
                               to="/dashboard/admin/class-time-table"
                             >
                               Class Timetable

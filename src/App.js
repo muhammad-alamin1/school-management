@@ -9,6 +9,7 @@ import ExamScheduleInformation from "./Components/Admin/Exam/ExamScheduleInfo";
 import AddNotice from "./Components/Admin/Notice/AddNotice";
 import EditNotice from "./Components/Admin/Notice/EditNotice";
 import NoticeInfo from "./Components/Admin/Notice/NoticeInfo";
+import OnlineAdmissionInfo from "./Components/Admin/OnlineAdmission/OnlineAdmissionInfo";
 import ProfileInformation from "./Components/Admin/RegisterUserProfileData/ProfileInformation";
 import StudentAdmission from "./Components/Admin/StudentAdmission/StudentAdmission";
 import StudentAdmissionInfo from "./Components/Admin/StudentAdmission/StudentAdmissionInfo";
@@ -244,6 +245,14 @@ function App() {
           element={
             <AdminRoute>
               <ContactInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/online-admission-information"
+          element={
+            <AdminRoute>
+              <OnlineAdmissionInfo />
             </AdminRoute>
           }
         />

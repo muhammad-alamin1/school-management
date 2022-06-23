@@ -5,10 +5,6 @@ import Nav from "../../Shared/Nav/Nav";
 import "./onlineAdmission.css";
 
 export default function OnlineAdmission() {
-  const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
-  });
   const [studentClass, setStudentClass] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -37,7 +33,6 @@ export default function OnlineAdmission() {
   const handleFileSelect = (event) => {
     if (event.target.name === "studentAvatar") {
       setStudentAvatar(event.target.files[0]);
-      console.log(event.target.files[0]);
     }
     if (event.target.name === "guardianAvatar") {
       setGuardianAvatar(event.target.files[0]);

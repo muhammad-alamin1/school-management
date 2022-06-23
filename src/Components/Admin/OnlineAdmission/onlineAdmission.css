@@ -1,0 +1,14 @@
+#searchBtn {
+  background-color: #337ab7;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+}
+
+#onlineAdmissionInformation select,
+#onlineAdmissionInformation input,
+#onlineAdmissionTableInformation button {
+  box-shadow: none;
+}
