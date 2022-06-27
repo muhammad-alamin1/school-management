@@ -4,8 +4,9 @@ import {
   faLinkedin,
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../../Hooks/axios";
 import DashboardPanel from "../DashboardPanel/DashboardPanel";
@@ -17,6 +18,7 @@ export default function TeachersInformation() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
+  const [search, setSearch] = useState("");
 
   // get all teacher data
   useEffect(() => {
@@ -67,11 +69,40 @@ export default function TeachersInformation() {
       setSuccess("");
     }
   };
+
+  // search implement
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const data = {
+    nodes: teachers.filter((item) => item.first_name.includes(search)),
+  };
   return (
     <div id="teacher-info">
       <DashboardPanel />
       <div className="sidebar-margin">
         <h3 className="my-4">Teachers Information</h3>
+        <div className="row my-5" id="onlineAdmissionInformation">
+          <div className="col-md-6">
+            <label for="class">Search by teacher name</label>
+            <input
+              type="search"
+              onChange={handleSearch}
+              className="form-control"
+              placeholder="Search"
+            />
+            <div className="text-end">
+              <button type="btn" className="my-2" id="searchBtn">
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  style={{ marginRight: "7px" }}
+                />
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
         <table class="table table-striped table-dark">
           <thead>
             <tr>
@@ -112,7 +143,7 @@ export default function TeachersInformation() {
               </div>
             )}
             {teachers &&
-              teachers.map((teacher, index) => (
+              data.nodes.map((teacher, index) => (
                 <tr>
                   <th scope="row">{index + 1}</th>
                   <td>{teacher.first_name}</td>
@@ -124,6 +155,7 @@ export default function TeachersInformation() {
                     <a
                       href={`http://localhost:8000/uploads/${teacher.avatar}`}
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img
                         src={`http://localhost:8000/uploads/${teacher.avatar}`}
@@ -177,7 +209,7 @@ export default function TeachersInformation() {
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog modal-lg">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="staticBackdropLabel">

@@ -4,6 +4,8 @@ import AllRegisterData from "./Components/Admin/AllRegisterData/AllRegisterData"
 import EditSingleUserInfo from "./Components/Admin/AllRegisterData/EditSingleUserInfo";
 import ContactInfo from "./Components/Admin/Contact/ContactInfo";
 import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
+import AddEmployee from "./Components/Admin/Employee/AddEmployee";
+import EmployeeInfo from "./Components/Admin/Employee/EmployeeInfo";
 import AddExamSchedule from "./Components/Admin/Exam/AddExamSchedule";
 import ExamScheduleInformation from "./Components/Admin/Exam/ExamScheduleInfo";
 import AddNotice from "./Components/Admin/Notice/AddNotice";
@@ -253,6 +255,22 @@ function App() {
           element={
             <AdminRoute>
               <OnlineAdmissionInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/register-employee/"
+          element={
+            <AdminRoute>
+              <AddEmployee />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/employee-information/"
+          element={
+            <AdminRoute>
+              <EmployeeInfo />
             </AdminRoute>
           }
         />

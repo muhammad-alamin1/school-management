@@ -1,0 +1,10 @@
+#employee .common-filed {
+  box-shadow: none;
+}
+
+#employee {
+  background-color: rgb(32, 44, 69);
+  color: #fff;
+  height: 100vh;
+  padding: 2rem;
+}

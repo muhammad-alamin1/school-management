@@ -112,7 +112,7 @@ export default function OnlineAdmissionInfo() {
           <div className="col-md-6">
             <label for="class">Search by student phone number</label>
             <input
-              type="text"
+              type="search"
               onChange={handleSearch}
               className="form-control"
               placeholder="Search by student phone number"

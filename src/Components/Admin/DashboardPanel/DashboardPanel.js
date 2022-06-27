@@ -3,11 +3,7 @@ import {
   faCircle,
   faEnvelope,
 } from "@fortawesome/free-regular-svg-icons";
-import {
-  faCog,
-  faPowerOff,
-  faTachometerAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCog, faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -124,10 +120,6 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <FontAwesomeIcon
-                                icon={faTachometerAlt}
-                                className="dashboard-icon"
-                              />
                               <span>Student Information</span>
                             </Link>
                           </a>
@@ -184,10 +176,6 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <FontAwesomeIcon
-                                icon={faTachometerAlt}
-                                className="dashboard-icon"
-                              />
                               <span>Teachers</span>
                             </Link>
                           </a>
@@ -220,10 +208,6 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <FontAwesomeIcon
-                                icon={faTachometerAlt}
-                                className="dashboard-icon"
-                              />
                               <span>Examinations</span>
                             </Link>
                           </a>
@@ -259,10 +243,6 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <FontAwesomeIcon
-                                icon={faTachometerAlt}
-                                className="dashboard-icon"
-                              />
                               <span>Attendance</span>
                             </Link>
                           </a>
@@ -289,10 +269,6 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <FontAwesomeIcon
-                                icon={faTachometerAlt}
-                                className="dashboard-icon"
-                              />
                               <span>Academics</span>
                             </Link>
                           </a>
@@ -334,10 +310,6 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <FontAwesomeIcon
-                                icon={faTachometerAlt}
-                                className="dashboard-icon"
-                              />
                               <span>Communicate</span>
                             </Link>
                           </a>
@@ -370,10 +342,6 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <FontAwesomeIcon
-                                icon={faTachometerAlt}
-                                className="dashboard-icon"
-                              />
                               <span>Employee</span>
                             </Link>
                           </a>
@@ -381,9 +349,18 @@ export default function DashboardPanel() {
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <a className="dropdown-item" to="">
-                              Liberian
-                            </a>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/register-employee/"
+                            >
+                              Employee
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/employee-information/"
+                            >
+                              Employee Info
+                            </Link>
                             <a className="dropdown-item" to="">
                               Others
                             </a>
@@ -400,10 +377,6 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
-                              <FontAwesomeIcon
-                                icon={faTachometerAlt}
-                                className="dashboard-icon"
-                              />
                               <span>Others</span>
                             </Link>
                           </a>

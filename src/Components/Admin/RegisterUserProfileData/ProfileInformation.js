@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import axiosInstance from "../../../Hooks/axios";
 import DashboardPanel from "../DashboardPanel/DashboardPanel";
 
@@ -7,6 +9,7 @@ export default function ProfileInformation() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
+  const [search, setSearch] = useState("");
 
   // get all profile data
   useEffect(() => {
@@ -50,11 +53,41 @@ export default function ProfileInformation() {
       setSuccess("");
     }
   };
+
+  // search implement
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const data = {
+    nodes: profiles.filter((item) => item.email.includes(search)),
+  };
+
   return (
     <>
       <DashboardPanel />
       <div className="sidebar-margin">
         <h3 className="my-4">Register User Profile Information</h3>
+        <div className="row my-5" id="onlineAdmissionInformation">
+          <div className="col-md-6">
+            <label for="class">Search by email</label>
+            <input
+              type="search"
+              onChange={handleSearch}
+              className="form-control"
+              placeholder="Search"
+            />
+            <div className="text-end">
+              <button type="btn" className="my-2" id="searchBtn">
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  style={{ marginRight: "7px" }}
+                />
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
         <table class="table table-striped table-dark">
           <thead>
             <tr>
@@ -101,7 +134,7 @@ export default function ProfileInformation() {
               </div>
             )}
             {profiles &&
-              profiles.map((profile, index) => (
+              data.nodes.map((profile, index) => (
                 <tr>
                   <th scope="row">{index + 1}</th>
                   <td>{profile.full_name}</td>
@@ -128,6 +161,7 @@ export default function ProfileInformation() {
                     <a
                       href={`http://localhost:8000/uploads/${profile.avatar}`}
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img
                         src={`http://localhost:8000/uploads/${profile.avatar}`}

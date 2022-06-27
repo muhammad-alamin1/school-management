@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../../Hooks/axios";
 import DashboardPanel from "../DashboardPanel/DashboardPanel";
@@ -11,6 +13,7 @@ export default function AllRegisterData() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
+  const [search, setSearch] = useState("");
 
   // get all student data
   useEffect(() => {
@@ -64,11 +67,40 @@ export default function AllRegisterData() {
     }
   };
 
+  // search implement
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const data = {
+    nodes: students.filter((item) => item.full_name.includes(search)),
+  };
+
   return (
     <div className="">
       <DashboardPanel />
       <div className="sidebar-margin ">
         <h3 className="my-4">Students Register Information</h3>
+        <div className="row my-5" id="onlineAdmissionInformation">
+          <div className="col-md-6">
+            <label for="class">Search by name</label>
+            <input
+              type="search"
+              onChange={handleSearch}
+              className="form-control"
+              placeholder="Search"
+            />
+            <div className="text-end">
+              <button type="btn" className="my-2" id="searchBtn">
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  style={{ marginRight: "7px" }}
+                />
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
         {success && (
           <div class="alert alert-success alert-dismissible fade show">
             <strong>Success!</strong> {success}
@@ -129,7 +161,7 @@ export default function AllRegisterData() {
               </div>
             )}
             {students &&
-              students.map((student, index) => (
+              data.nodes.map((student, index) => (
                 <tr>
                   <th scope="row">{index + 1}</th>
                   <td>{student.full_name}</td>
