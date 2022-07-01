@@ -2,7 +2,7 @@ import { useState } from "react";
 import axiosInstance from "../../../Hooks/axios";
 import DashboardPanel from "../DashboardPanel/DashboardPanel";
 
-export default function AddNotice() {
+export default function AddEvents() {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [message, setMessage] = useState("");
@@ -25,7 +25,7 @@ export default function AddNotice() {
     axiosInstance({
       mode: "no-cors",
       method: "post",
-      url: `/notice/post-notice`,
+      url: `/events/post-event`,
       data,
       headers: {
         "Content-Type": "application/json",
@@ -37,13 +37,13 @@ export default function AddNotice() {
           setError("");
         } else {
           setSuccess("");
-          setError("Notice added  failed.!");
+          setError("Event added failed.!");
         }
         setLoading(false);
       })
       .catch(function (error) {
         setSuccess("");
-        setError("Notice added failed.!");
+        setError("Event added failed.!");
         setLoading(false);
       });
   };
@@ -52,7 +52,7 @@ export default function AddNotice() {
     <>
       <DashboardPanel />
       <div className="sidebar-margin">
-        <h3 className="my-3">Add Notice</h3>
+        <h3 className="my-3">Add Events</h3>
         {success && (
           <div class="alert alert-success alert-dismissible fade show">
             <strong>Success!</strong> {success}
@@ -83,14 +83,14 @@ export default function AddNotice() {
         <form onSubmit={handleSubmit}>
           <div className="row my-3">
             <div class="col-md-6">
-              <label for="title">Notice title *</label>
+              <label for="title">Event title *</label>
               <input
                 type="text"
                 name="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="form-control"
-                placeholder="Notice title"
+                placeholder="Title"
                 required
               />
             </div>

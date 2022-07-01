@@ -34,7 +34,15 @@ export default function EmployeeInfo() {
   const singleEmployeeData = (id) => {};
 
   // delete employee
-  const deleteUser = (id) => {};
+  const deleteUser = async (id) => {
+    try {
+      axiosInstance.delete(`/employee/delete/${id}`).then((response) => {
+        if (response.status === 200 || response.status === 201) {
+          window.location.reload();
+        }
+      });
+    } catch (error) {}
+  };
 
   // search implement
   const handleSearch = (event) => {

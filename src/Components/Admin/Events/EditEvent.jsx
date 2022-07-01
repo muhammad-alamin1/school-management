@@ -1,49 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../../Hooks/axios";
 import DashboardPanel from "../DashboardPanel/DashboardPanel";
 
-export default function AddNotice() {
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
-  const [message, setMessage] = useState("");
+export default function EditEvent() {
+  const { id } = useParams();
+  const [notice, setNotice] = useState({});
 
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState();
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // data
-  const data = {
-    title,
-    date,
-    message,
+  const history = useNavigate();
+
+  // get data
+  useEffect(() => {
+    axiosInstance
+      .get(`/events/single/${id}`)
+      .then((response) => {
+        setNotice(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id]);
+
+  // handle change
+  const handleChange = (e) => {
+    const newData = { ...notice };
+    newData[e.target.name] = e.target.value;
+    setNotice(newData);
   };
 
-  // submit form
-  const handleSubmit = (e) => {
+  // update handler
+  const updateHandler = (e) => {
     e.preventDefault();
 
-    axiosInstance({
-      mode: "no-cors",
-      method: "post",
-      url: `/notice/post-notice`,
-      data,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    axiosInstance
+      .put(`/events/update/${id}`, notice)
       .then(function (response) {
         if (response.status === 200 || response.status === 201) {
-          setSuccess(response.data.message);
           setError("");
+          setSuccess(response.data.message);
+          history(-1);
         } else {
+          setError("Event updated failed.!");
           setSuccess("");
-          setError("Notice added  failed.!");
         }
         setLoading(false);
       })
-      .catch(function (error) {
+      .catch((error) => {
+        console.log(error);
+        setError("Event updated failed.!");
         setSuccess("");
-        setError("Notice added failed.!");
         setLoading(false);
       });
   };
@@ -52,7 +61,7 @@ export default function AddNotice() {
     <>
       <DashboardPanel />
       <div className="sidebar-margin">
-        <h3 className="my-3">Add Notice</h3>
+        <h3 className="my-3">Update Event</h3>
         {success && (
           <div class="alert alert-success alert-dismissible fade show">
             <strong>Success!</strong> {success}
@@ -80,38 +89,38 @@ export default function AddNotice() {
             </div>
           </div>
         )}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={updateHandler}>
           <div className="row my-3">
-            <div class="col-md-6">
-              <label for="title">Notice title *</label>
+            <div class="col-md-4">
+              <label for="title">Updated Notice title *</label>
               <input
                 type="text"
                 name="title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={notice?.title}
+                onChange={handleChange}
                 className="form-control"
-                placeholder="Notice title"
+                placeholder="Event title"
                 required
               />
             </div>
-            <div class="col-md-6">
-              <label for="date">Date *</label>
+            <div class="col-md-4">
+              <label for="date">Updated Event Date *</label>
               <input
                 type="date"
                 name="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
+                value={notice?.date}
+                onChange={handleChange}
                 className="form-control"
                 required
               />
             </div>
-            <div class="col-md-6 my-3">
+            <div class="col-md-4">
               <label for="message">Message *</label>
               <textarea
                 type="text"
                 name="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={notice?.message}
+                onChange={handleChange}
                 className="form-control"
                 placeholder="Message"
                 required
@@ -120,9 +129,8 @@ export default function AddNotice() {
           </div>
           <input
             type="submit"
-            value="Submit"
-            id="contactUsSubmitBtn"
-            className="my-3"
+            value="Update Info"
+            className="btn btn-outline-success my-4"
           />
         </form>
       </div>

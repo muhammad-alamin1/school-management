@@ -6,6 +6,9 @@ import ContactInfo from "./Components/Admin/Contact/ContactInfo";
 import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
 import AddEmployee from "./Components/Admin/Employee/AddEmployee";
 import EmployeeInfo from "./Components/Admin/Employee/EmployeeInfo";
+import AddEvents from "./Components/Admin/Events/AddEvents";
+import EditEvent from "./Components/Admin/Events/EditEvent";
+import EventsInfo from "./Components/Admin/Events/EventsInfo";
 import AddExamSchedule from "./Components/Admin/Exam/AddExamSchedule";
 import ExamScheduleInformation from "./Components/Admin/Exam/ExamScheduleInfo";
 import AddNotice from "./Components/Admin/Notice/AddNotice";
@@ -67,6 +70,7 @@ import PhysicsSSC from "./Components/Components/Course/SSCCandidate/Physics";
 import PageNotFound from "./Components/Error/PageNotFound";
 import AboutUs from "./Components/Pages/AboutUs/AboutUs";
 import BlogPage from "./Components/Pages/BlogPage/BlogPage";
+import OurCampus from "./Components/Pages/Campus/OurCampus";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
 import Gallery from "./Components/Pages/Gallery/Gallery";
 import Home from "./Components/Pages/Home/Home";
@@ -82,7 +86,9 @@ import ClassTimeTable10 from "./Components/Students/ClassTimeTable/ClassTimeTabl
 import ClassTimeTable7 from "./Components/Students/ClassTimeTable/ClassTimeTable7";
 import ClassTimeTable8 from "./Components/Students/ClassTimeTable/ClassTimeTable8";
 import ClassTimeTable9 from "./Components/Students/ClassTimeTable/ClassTimeTable9";
+import DeviceActivity from "./Components/Students/Device/DeviceActivity";
 import ExamSchedule from "./Components/Students/Examination/ExamSchedule";
+import Events from "./Components/Students/Notification/Event";
 import Notice from "./Components/Students/Notification/Notice";
 import Class10 from "./Components/Students/OnlineCourse/Class10";
 import Class6 from "./Components/Students/OnlineCourse/Class6";
@@ -271,6 +277,30 @@ function App() {
           element={
             <AdminRoute>
               <EmployeeInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/add-events/"
+          element={
+            <AdminRoute>
+              <AddEvents />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/events-information/"
+          element={
+            <AdminRoute>
+              <EventsInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/events-information/update/:id"
+          element={
+            <AdminRoute>
+              <EditEvent />
             </AdminRoute>
           }
         />
@@ -734,6 +764,22 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/dashboard/user/events/"
+          element={
+            <PrivateRoute>
+              <Events />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/device-activity/"
+          element={
+            <PrivateRoute>
+              <DeviceActivity />
+            </PrivateRoute>
+          }
+        />
 
         {/* User route end */}
 
@@ -764,6 +810,7 @@ function App() {
         <Route path="/page/principle-message" element={<PrincipleMessage />} />
         <Route path="/page/school-uniform" element={<SchoolUniform />} />
         <Route path="/page/online-admission" element={<OnlineAdmission />} />
+        <Route path="/page/our-campus" element={<OurCampus />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

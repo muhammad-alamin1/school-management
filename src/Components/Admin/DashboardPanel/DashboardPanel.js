@@ -51,6 +51,8 @@ export default function DashboardPanel() {
     }
   };
 
+  document.title = "BRUASS | Dashboard";
+
   return (
     <>
       {token ? (
@@ -392,9 +394,21 @@ export default function DashboardPanel() {
                             </Link>
                             <Link
                               className="dropdown-item"
+                              to="/dashboard/admin/add-events/"
+                            >
+                              Events
+                            </Link>
+                            <Link
+                              className="dropdown-item"
                               to="/dashboard/admin/notice-info"
                             >
                               Notice Info
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/events-information/"
+                            >
+                              Events Info
                             </Link>
                             <Link
                               className="dropdown-item"
@@ -451,6 +465,12 @@ export default function DashboardPanel() {
                             ) : (
                               ""
                             )}
+                            <Link
+                              className="dropdown-item"
+                              to={`/dashboard/user/device-activity/`}
+                            >
+                              Device
+                            </Link>
                           </ul>
                         </div>
                       </li>
@@ -613,7 +633,10 @@ export default function DashboardPanel() {
                             >
                               Notice
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/events/"
+                            >
                               Events
                             </Link>
                           </ul>

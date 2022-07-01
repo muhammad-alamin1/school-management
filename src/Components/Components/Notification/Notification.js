@@ -1,18 +1,35 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./notification.css";
 
 export default function Notification() {
   const [notices, setNotices] = useState([]);
+  const [events, setEvents] = useState([]);
   const [error, setError] = useState("");
 
-  // get notice data
+  // get event data
   useEffect(() => {
     axios
       .get("http://localhost:8000/notice/all-notice/")
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
           setNotices(response?.data.data);
+        } else {
+          setError("Data not found.!");
+        }
+      })
+      .catch((err) => {
+        setError("Data not found.!");
+      });
+  }, []);
+
+  // get notice data
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/events/all/")
+      .then((response) => {
+        if (response.status === 200 || response.status === 201) {
+          setEvents(response?.data.data);
         } else {
           setError("Data not found.!");
         }
@@ -28,24 +45,26 @@ export default function Notification() {
           <div className="col-md-6 left-side">
             <h2 className="my-4">Events</h2>
             <div className="d-flex">
-              <div className="date">
-                May <br /> 06
-              </div>
+              <div className="date">{events[0]?.date}</div>
               <div>
-                <h4>US Senior final exam</h4>
-                <p>7:30 AM - 5:00 PM</p>
+                <h4>{events[0]?.title}</h4>
+                <p>{events[0]?.message}</p>
               </div>
             </div>
-            <div className="d-flex">
-              <div className="date">
-                May <br /> 06
-              </div>
+            <div className="d-flex my-2">
+              <div className="date">{events[1]?.date}</div>
               <div>
-                <h4>US Senior final exam</h4>
-                <p>7:30 AM - 5:00 PM</p>
+                <h4>{events[1]?.title}</h4>
+                <p>{events[1]?.message}</p>
               </div>
             </div>
-            <button>View All Events</button>
+            <div className="d-flex my-2">
+              <div className="date">{events[2]?.date}</div>
+              <div>
+                <h4>{events[2]?.title}</h4>
+                <p>{events[2]?.message}</p>
+              </div>
+            </div>
           </div>
           <div className="col-md-6">
             <h2 className="my-4">Notice Board</h2>

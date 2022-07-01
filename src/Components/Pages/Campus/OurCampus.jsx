@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
 import schoolImg from "../../../images/background.webp";
+import cryBaby from "../../../images/cry-baby.png";
+import muhammad from "../../../images/muhammad.jpeg";
 import Footer from "../../Shared/Footer/Footer";
 import Nav from "../../Shared/Nav/Nav";
-import "./gallery.css";
+import "./campus.css";
 
 const gallerys = [
   {
@@ -14,13 +15,13 @@ const gallerys = [
   {
     id: 2,
     link: ``,
-    img: schoolImg,
+    img: cryBaby,
     title: "Activities",
   },
   {
     id: 3,
     link: ``,
-    img: schoolImg,
+    img: muhammad,
     title: "Celebration",
   },
   {
@@ -31,22 +32,20 @@ const gallerys = [
   },
 ];
 
-export default function Gallery() {
+export default function OurCampus() {
+  document.title = "BRUASS | Campus";
   return (
     <>
       <Nav />
-      <div className="container" id="gallery">
-        <h2 className="my-5">Gallery</h2>
+      <div className="container" id="campus">
+        <h2 className="my-5">Our campus</h2>
 
         <div className="row text-center my-5">
           {gallerys.map((gallery) => (
-            <div class="card text-center" id="galleryCard">
-              <Link to={gallery.link} className="text-dark" rel="noreferrer">
-                <div class="card-body">
-                  <img src={gallery.img} alt={gallery.title} />
-                  <h3 className="my-2">{gallery.title}</h3>
-                </div>
-              </Link>
+            <div class="card text-center" id="campusCard">
+              <div class="card-body">
+                <img src={gallery.img} alt={gallery.title} />
+              </div>
             </div>
           ))}
         </div>

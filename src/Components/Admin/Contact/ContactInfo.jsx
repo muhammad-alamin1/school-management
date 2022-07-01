@@ -95,8 +95,8 @@ export default function ContactInfo() {
                 <th scope="col">Description</th>
                 <th scope="col">CreatedAt</th>
                 <th scope="col">Mail</th>
-                <th scope="col" className="bg-danger">
-                  Delete
+                <th scope="col" className="bg-secondary">
+                  Action
                 </th>
               </tr>
             </thead>
@@ -130,6 +130,7 @@ export default function ContactInfo() {
                         onClick={() => deleteContact(contact._id)}
                         className="direction"
                         href=""
+                        style={{ color: "red" }}
                       >
                         <span className="material-icons-outlined">delete</span>
                         Delete
