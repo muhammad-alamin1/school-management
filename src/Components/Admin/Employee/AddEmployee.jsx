@@ -19,8 +19,6 @@ export default function AddEmployee() {
   const [joinDate, setJoinDate] = useState("");
   const [address, setAddress] = useState("");
 
-  console.log(joinDate);
-
   // file change
   const handleFileSelect = (event) => {
     if (event.target.name === "avatar") {

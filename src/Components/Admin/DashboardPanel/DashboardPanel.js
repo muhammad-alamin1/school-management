@@ -271,6 +271,62 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
+                              <span>Exam Result</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/exam-result/class-six"
+                            >
+                              Class-6
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/exam-result/class-seven"
+                            >
+                              Class-7
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/exam-result/class-eight"
+                            >
+                              Class-8
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/exam-result/class-nine"
+                            >
+                              Class-9
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/exam-result/class-ten"
+                            >
+                              Class-10
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/exam-result/result-information"
+                            >
+                              Results Information
+                            </Link>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
                               <span>Academics</span>
                             </Link>
                           </a>
@@ -293,12 +349,38 @@ export default function DashboardPanel() {
                             <a className="dropdown-item" to="">
                               Teacher Timetable
                             </a>
-                            <a className="dropdown-item" to="">
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
+                              <span>Books</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link className="dropdown-item" to="">
+                              Academic Books
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Others Books
+                            </Link>
+                            <Link className="dropdown-item" to="">
                               Subject
-                            </a>
-                            <a className="dropdown-item" to="">
-                              Subject Group
-                            </a>
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Books Information
+                            </Link>
                           </ul>
                         </div>
                       </li>
@@ -604,7 +686,10 @@ export default function DashboardPanel() {
                             >
                               Exam Schedule
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/exam-result/"
+                            >
                               Exam Result
                             </Link>
                           </ul>
@@ -652,6 +737,35 @@ export default function DashboardPanel() {
                             aria-expanded="false"
                           >
                             <Link to="">
+                              <span>Library</span>
+                            </Link>
+                          </a>
+                          <ul
+                            className="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink"
+                          >
+                            <Link className="dropdown-item" to="">
+                              Academic Books
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Others Books
+                            </Link>
+                            <Link className="dropdown-item" to="">
+                              Book Issued
+                            </Link>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="sidebar-dropdown my-2">
+                        <div className="dropdown">
+                          <a
+                            className="btn "
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <Link to="">
                               <span>Settings</span>
                             </Link>
                           </a>
@@ -664,18 +778,6 @@ export default function DashboardPanel() {
                               to="/dashboard/user/settings/change-password/"
                             >
                               Change Password
-                            </Link>
-                            <Link className="dropdown-item" to="">
-                              Class-7
-                            </Link>
-                            <Link className="dropdown-item" to="">
-                              Class-8
-                            </Link>
-                            <Link className="dropdown-item" to="">
-                              Class-9
-                            </Link>
-                            <Link className="dropdown-item" to="">
-                              Class-10
                             </Link>
                           </ul>
                         </div>

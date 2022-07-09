@@ -11,6 +11,12 @@ import EditEvent from "./Components/Admin/Events/EditEvent";
 import EventsInfo from "./Components/Admin/Events/EventsInfo";
 import AddExamSchedule from "./Components/Admin/Exam/AddExamSchedule";
 import ExamScheduleInformation from "./Components/Admin/Exam/ExamScheduleInfo";
+import ClassEight from "./Components/Admin/ExamResult/ClassEight";
+import ClassNine from "./Components/Admin/ExamResult/ClassNine";
+import ClassSeven from "./Components/Admin/ExamResult/ClassSeven";
+import ClassSix from "./Components/Admin/ExamResult/ClassSix";
+import ClassTen from "./Components/Admin/ExamResult/ClassTen";
+import ResultsInfo from "./Components/Admin/ExamResult/ResultsInfo";
 import AddNotice from "./Components/Admin/Notice/AddNotice";
 import EditNotice from "./Components/Admin/Notice/EditNotice";
 import NoticeInfo from "./Components/Admin/Notice/NoticeInfo";
@@ -87,6 +93,7 @@ import ClassTimeTable7 from "./Components/Students/ClassTimeTable/ClassTimeTable
 import ClassTimeTable8 from "./Components/Students/ClassTimeTable/ClassTimeTable8";
 import ClassTimeTable9 from "./Components/Students/ClassTimeTable/ClassTimeTable9";
 import DeviceActivity from "./Components/Students/Device/DeviceActivity";
+import ExamResult from "./Components/Students/Examination/ExamResult";
 import ExamSchedule from "./Components/Students/Examination/ExamSchedule";
 import Events from "./Components/Students/Notification/Event";
 import Notice from "./Components/Students/Notification/Notice";
@@ -301,6 +308,54 @@ function App() {
           element={
             <AdminRoute>
               <EditEvent />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/exam-result/class-six"
+          element={
+            <AdminRoute>
+              <ClassSix />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/exam-result/class-seven"
+          element={
+            <AdminRoute>
+              <ClassSeven />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/exam-result/class-eight"
+          element={
+            <AdminRoute>
+              <ClassEight />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/exam-result/class-nine"
+          element={
+            <AdminRoute>
+              <ClassNine />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/exam-result/class-ten"
+          element={
+            <AdminRoute>
+              <ClassTen />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/exam-result/result-information"
+          element={
+            <AdminRoute>
+              <ResultsInfo />
             </AdminRoute>
           }
         />
@@ -777,6 +832,14 @@ function App() {
           element={
             <PrivateRoute>
               <DeviceActivity />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/exam-result/"
+          element={
+            <PrivateRoute>
+              <ExamResult />
             </PrivateRoute>
           }
         />

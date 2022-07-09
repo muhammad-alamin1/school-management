@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axiosInstance from "../../../Hooks/axios";
 import noPhoto from "../../../images/nophoto.png";
 import DashboardPanel from "../../Admin/DashboardPanel/DashboardPanel";
@@ -65,6 +65,10 @@ export default function Profile() {
                     <p class="mb-0">
                       <strong class="pr-1">Section: </strong>
                       {profile ? `${profile.section}` : "Empty"}
+                    </p>
+                    <p class="mb-0">
+                      <strong class="pr-1">Profile: </strong>
+                      {profile ? `${profile.status}` : "Empty"}
                     </p>
                   </div>
                 </div>

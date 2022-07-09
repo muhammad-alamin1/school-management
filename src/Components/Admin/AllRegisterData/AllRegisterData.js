@@ -1,8 +1,7 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../../Hooks/axios";
+import SearchQuery from "../../Components/Search/SearchQuery";
 import DashboardPanel from "../DashboardPanel/DashboardPanel";
 import "./allregister.css";
 
@@ -81,26 +80,7 @@ export default function AllRegisterData() {
       <DashboardPanel />
       <div className="sidebar-margin ">
         <h3 className="my-4">Students Register Information</h3>
-        <div className="row my-5" id="onlineAdmissionInformation">
-          <div className="col-md-6">
-            <label for="class">Search by name</label>
-            <input
-              type="search"
-              onChange={handleSearch}
-              className="form-control"
-              placeholder="Search"
-            />
-            <div className="text-end">
-              <button type="btn" className="my-2" id="searchBtn">
-                <FontAwesomeIcon
-                  icon={faSearch}
-                  style={{ marginRight: "7px" }}
-                />
-                Search
-              </button>
-            </div>
-          </div>
-        </div>
+        <SearchQuery handleSearch={handleSearch} searchBy="name" />
         {success && (
           <div class="alert alert-success alert-dismissible fade show">
             <strong>Success!</strong> {success}
