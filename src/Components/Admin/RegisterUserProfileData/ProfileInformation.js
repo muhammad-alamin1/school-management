@@ -18,8 +18,6 @@ export default function ProfileInformation() {
   const [success, setSuccess] = useState("");
   const [search, setSearch] = useState("");
 
-  console.log(profile);
-
   // get all profile data
   useEffect(() => {
     setLoading(true);

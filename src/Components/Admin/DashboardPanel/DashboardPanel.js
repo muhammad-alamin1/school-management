@@ -369,16 +369,28 @@ export default function DashboardPanel() {
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/books/add-book"
+                            >
+                              Add Book
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/books/academics-books"
+                            >
                               Academic Books
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/books/others-books"
+                            >
                               Others Books
                             </Link>
-                            <Link className="dropdown-item" to="">
-                              Subject
-                            </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/admin/books/all"
+                            >
                               Books Information
                             </Link>
                           </ul>
@@ -744,10 +756,16 @@ export default function DashboardPanel() {
                             className="dropdown-menu"
                             aria-labelledby="dropdownMenuLink"
                           >
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/books/academics/"
+                            >
                               Academic Books
                             </Link>
-                            <Link className="dropdown-item" to="">
+                            <Link
+                              className="dropdown-item"
+                              to="/dashboard/user/books/others/"
+                            >
                               Others Books
                             </Link>
                             <Link className="dropdown-item" to="">

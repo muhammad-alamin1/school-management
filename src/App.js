@@ -2,6 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AllRegisterData from "./Components/Admin/AllRegisterData/AllRegisterData";
 import EditSingleUserInfo from "./Components/Admin/AllRegisterData/EditSingleUserInfo";
+import AcademicBooks from "./Components/Admin/Books/AcademicBooks";
+import AddBook from "./Components/Admin/Books/AddBook";
+import AllBooksList from "./Components/Admin/Books/AllBooksList";
+import OthersBooks from "./Components/Admin/Books/OthersBooks";
 import ContactInfo from "./Components/Admin/Contact/ContactInfo";
 import DashboardPanel from "./Components/Admin/DashboardPanel/DashboardPanel";
 import AddEmployee from "./Components/Admin/Employee/AddEmployee";
@@ -95,6 +99,8 @@ import ClassTimeTable9 from "./Components/Students/ClassTimeTable/ClassTimeTable
 import DeviceActivity from "./Components/Students/Device/DeviceActivity";
 import ExamResult from "./Components/Students/Examination/ExamResult";
 import ExamSchedule from "./Components/Students/Examination/ExamSchedule";
+import AcademicBook from "./Components/Students/Library/AcademicBook";
+import OthersBook from "./Components/Students/Library/OthersBook";
 import Events from "./Components/Students/Notification/Event";
 import Notice from "./Components/Students/Notification/Notice";
 import Class10 from "./Components/Students/OnlineCourse/Class10";
@@ -356,6 +362,38 @@ function App() {
           element={
             <AdminRoute>
               <ResultsInfo />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/books/academics-books"
+          element={
+            <AdminRoute>
+              <AcademicBooks />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/books/others-books"
+          element={
+            <AdminRoute>
+              <OthersBooks />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/books/all"
+          element={
+            <AdminRoute>
+              <AllBooksList />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin/books/add-book"
+          element={
+            <AdminRoute>
+              <AddBook />
             </AdminRoute>
           }
         />
@@ -840,6 +878,22 @@ function App() {
           element={
             <PrivateRoute>
               <ExamResult />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/books/academics/"
+          element={
+            <PrivateRoute>
+              <AcademicBook />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/user/books/others/"
+          element={
+            <PrivateRoute>
+              <OthersBook />
             </PrivateRoute>
           }
         />
